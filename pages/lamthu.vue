@@ -14,7 +14,9 @@
     "
   >
     <div v-for="(item, index) in test" :key="item">
-      <div class=" text-center border-2 border-yellow-500 mx-8">Câu {{ index + 1 }}</div>
+      <div class="text-center border-2 border-yellow-500 mx-8">
+        Câu {{ index + 1 }}
+      </div>
       <div class="w-full mt-6 flex space-x-20 justify-center">
         <div class="w-1/2 justify-center">
           <div v-for="i in item.list1" :key="i" class="w-90 mt-4 mx-auto">
@@ -59,6 +61,7 @@ export default {
           // this.test = res?.data?.question
           // this.list1 = res?.data.answer.filter((x) => x.group === 1)
           // this.list2 = res?.data.answer.filter((x) => x.group === 2)
+          // map duyệt từng phần tử
           this.test = res.data.map((i) => {
             i.list1 = i.answer.filter((x) => x.group === 1)
             i.list2 = i.answer.filter((x) => x.group === 2)
